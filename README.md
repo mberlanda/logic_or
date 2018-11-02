@@ -26,12 +26,30 @@ Or install it yourself as:
 
 ## Usage
 
+Whilst `||` and `&&` operators will consider `nil` and `false` both as undefined, `lor` will allow
+to make a distinction between them. This may be very tricky when assignin variables with `||=` or
+`&&=`.
+
+```rb
+    it { expect(nil.lor('a')).to eq('a') }
+    it { expect(nil.lor(1)).to eq(1) }
+    it { expect(nil.lor([])).to eq([]) }
+    it { expect(nil.lor(false)).to eq(false) }
+
+    it { expect(false.lor('a')).to eq(false) }
+    it { expect(false.lor(1)).to eq(false) }
+    it { expect(false.lor([])).to eq(false) }
+    it { expect(false.lor(true)).to eq(false) }
+```
+
+In v0.0.1 only the `lor` method is provided. As a next improvement it would be interesting to provide
+as well a well to assign like `lor!` or `lor=`
 
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`.
 
 ## Contributing
 

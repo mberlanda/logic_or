@@ -10,5 +10,5 @@ void
 Init_logic_or()
 {
     VALUE rb_mLogicOr = rb_define_module("LogicOr");
-    rb_define_method(rb_mLogicOr, "logic_or", rb_logic_or, 1);
+    rb_define_method(rb_mLogicOr, "lor", rb_logic_or, 1);
 }
