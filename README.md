@@ -1,5 +1,7 @@
 # LogicOr
 
+[![Build Status](https://travis-ci.com/mberlanda/logic_or.svg?branch=master)](https://travis-ci.com/mberlanda/logic_or)
+
 The purpose of `LogicOr` gem is to provide the same behavior as *Logical Defined-Or operator* in perl:
 <https://perldoc.perl.org/perlop.html#Logical-Defined-Or>
 
